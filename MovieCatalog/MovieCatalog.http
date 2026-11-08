@@ -1,0 +1,42 @@
+@MovieCatalog_HostAddress = http://localhost:5016
+
+### GET: Отримати всі фільми
+GET {{MovieCatalog_HostAddress}}/api/movies
+
+### GET: Знайти фільм за Id
+GET {{MovieCatalog_HostAddress}}/api/movies/1
+
+### GET: Знайти неіснуючий фільм
+GET {{MovieCatalog_HostAddress}}/api/movies/100
+
+### GET: Знайти фільм за назвою
+GET {{MovieCatalog_HostAddress}}/api/movies/by-title/Interstellar
+
+### GET: Фільтрація за жанром
+GET {{MovieCatalog_HostAddress}}/api/movies/search?genre=Sci-Fi
+
+### GET: Фільтрація за рейтингом
+GET {{MovieCatalog_HostAddress}}/api/movies/search?minRating=9
+
+### GET: Фільтрація за жанром і рейтингом
+GET {{MovieCatalog_HostAddress}}/api/movies/search?genre=Sci-Fi&minRating=8
+
+### POST: Додати фільм
+POST {{MovieCatalog_HostAddress}}/api/movies
+Content-Type: application/json
+
+{
+    "title": "Avatar",
+    "genre": "Sci-Fi",
+    "year": 2009,
+    "rating": 7.9
+}
+
+### GET: Перевірити доданий фільм
+GET {{MovieCatalog_HostAddress}}/api/movies/5
+
+### DELETE: Видалити фільм
+DELETE {{MovieCatalog_HostAddress}}/api/movies/5
+
+### GET: Перевірити видалення
+GET {{MovieCatalog_HostAddress}}/api/movies/5
